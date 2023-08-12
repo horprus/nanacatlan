@@ -44,8 +44,12 @@ func main() {
 
     fmt.Printf("Starting server at port 8080\n")
     if err := http.ListenAndServe(":8080", nil); err != nil {
-        log.Fatal(err)
+        log.Fatal("ListenAndServe: ", err)
     }
+
+    //if err := http.ListenAndServeTLS(":443", "full_cert.crt", "private_key.key", nil); err != nil {
+    //    log.Fatal("ListenAndServeTLS: ", err)
+    //}
 }
 
 
